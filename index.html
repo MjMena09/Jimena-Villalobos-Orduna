@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-/* ===================== RESET ===================== */
 *{
   margin:0;
   padding:0;
@@ -25,6 +24,11 @@ h1,h2,h3{
   font-family:'Playfair Display',serif;
 }
 
+section{
+  padding:100px 10%;
+  text-align:center;
+}
+
 /* ===================== HEADER ===================== */
 header{
   height:100vh;
@@ -33,7 +37,7 @@ header{
   justify-content:center;
   align-items:center;
   text-align:center;
-  background-image:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"); /* 🔴 REEMPLAZAR LINK DE FONDO */
+  background-image:url("https://github.com/MjMena09/Jimena-Villalobos-Orduna/blob/main/Public/Images/Background/Background_1.jpeg?raw=true"); /* 🔴 CAMBIA POR TU LINK */
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
@@ -50,13 +54,7 @@ header p{
   text-shadow:0 0 10px black;
 }
 
-/* ===================== SECCIONES ===================== */
-section{
-  padding:100px 10%;
-  text-align:center;
-}
-
-/* SOBRE MÍ */
+/* ===================== SOBRE MÍ ===================== */
 .about{
   max-width:700px;
   margin:auto;
@@ -69,9 +67,9 @@ section{
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
   gap:40px;
   margin-top:50px;
-  position:relative;
 }
 
+/* proyecto individual */
 .project{
   position:relative;
   overflow:hidden;
@@ -91,25 +89,27 @@ section{
   filter:brightness(.35);
 }
 
-/* ===================== POPUP AL HOVER ===================== */
+/* ===================== POPUP REAL ===================== */
 .project-popup{
-  position:absolute;
+  position:fixed; /* 🔹 ventana centrada en pantalla */
   top:50%;
   left:50%;
-  transform:translate(-50%, -50%) scale(0.8);
+  transform:translate(-50%,-50%) scale(0.8);
   width:90%;
-  max-width:500px;
-  background:rgba(0,0,0,0.9);
+  max-width:600px;
+  background:rgba(0,0,0,0.95);
   padding:25px;
   border-radius:15px;
   opacity:0;
   transition:.4s;
-  z-index:2;
+  z-index:999;
+  pointer-events:none; /* para que solo aparezca con hover */
 }
 
 .project:hover .project-popup{
   opacity:1;
-  transform:translate(-50%, -50%) scale(1);
+  transform:translate(-50%,-50%) scale(1);
+  pointer-events:auto;
 }
 
 .project-popup h3{
@@ -120,7 +120,7 @@ section{
   line-height:1.5;
 }
 
-/* GALERÍA INTERNA DEL POPUP */
+/* galería dentro del popup */
 .popup-gallery{
   display:flex;
   gap:10px;
@@ -161,13 +161,11 @@ footer{
 
 <body>
 
-<!-- ===================== HEADER ===================== -->
 <header>
   <h1>Jimena Villalobos Orduna</h1>
   <p>Animation • Visual Storytelling • Direction</p>
 </header>
 
-<!-- ===================== SOBRE MÍ ===================== -->
 <section class="about">
 <h2>Sobre mí</h2>
 <p>
@@ -177,64 +175,65 @@ footer{
 </p>
 </section>
 
-<!-- ===================== PROYECTOS ===================== -->
 <section>
 <h2>Proyectos</h2>
+
 <div class="projects-grid">
 
-  <!-- ========== PROYECTO 1 ========== -->
+  <!-- ===================== PROYECTO 1 ===================== -->
   <div class="project">
-    <!-- 🔴 IMAGEN PRINCIPAL -->
+    <!-- 🔴 IMAGEN PRINCIPAL DEL PROYECTO -->
     <img src="https://images.unsplash.com/photo-1526318472351-bc6c5a3a1a0f">
 
+    <!-- 🔹 POPUP -->
     <div class="project-popup">
       <h3>Proyecto 1</h3>
       <p>
-        🔴 INSERTAR TEXTO AQUI  
-        Descripción del proyecto  
-        🔴 INSERTAR TEXTO AQUI
+      🔴 INSERTAR TEXTO AQUI  
+      Descripción del proyecto  
+      🔴 INSERTAR TEXTO AQUI
       </p>
+      <!-- 🔹 GALERÍA DEL POPUP -->
       <div class="popup-gallery">
-        <!-- 🔴 CAMBIAR URLS POR TUS IMÁGENES -->
-        <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f">
-        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32">
-        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429">
+        <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f"> <!-- 🔴 REEMPLAZAR -->
+        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32"> <!-- 🔴 REEMPLAZAR -->
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429"> <!-- 🔴 REEMPLAZAR -->
       </div>
     </div>
   </div>
 
-  <!-- ========== PROYECTO 2 ========== -->
+  <!-- ===================== PROYECTO 2 ===================== -->
   <div class="project">
     <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f">
     <div class="project-popup">
       <h3>Proyecto 2</h3>
       <p>
-        🔴 INSERTAR TEXTO AQUI  
-        Descripción del proyecto  
-        🔴 INSERTAR TEXTO AQUI
+      🔴 INSERTAR TEXTO AQUI  
+      Descripción del proyecto  
+      🔴 INSERTAR TEXTO AQUI
       </p>
       <div class="popup-gallery">
-        <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
-        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429">
-        <img src="https://images.unsplash.com/photo-1505685296765-3a2736de412f">
+        <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7"> <!-- 🔴 REEMPLAZAR -->
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429"> <!-- 🔴 REEMPLAZAR -->
+        <img src="https://images.unsplash.com/photo-1505685296765-3a2736de412f"> <!-- 🔴 REEMPLAZAR -->
       </div>
     </div>
   </div>
 
-  <!-- ========== PROYECTO 3 ========== -->
+  <!-- ===================== PROYECTO 3 ===================== -->
   <div class="project">
     <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
     <div class="project-popup">
       <h3>Proyecto 3</h3>
       <p>
-        🔴 INSERTAR TEXTO AQUI  
-        Descripción del proyecto  
-        🔴 INSERTAR TEXTO AQUI
+      🔴 INSERTAR TEXTO AQUI  
+      Descripción del proyecto  
+      🔴 INSERTAR TEXTO AQUI
       </p>
       <div class="popup-gallery">
-        <img src="https://images.unsplash.com/photo-1526318472351-bc6c5a3a1a0f">
-        <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f">
-        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32">
+        <img src="https://images.unsplash.com/photo-1526318472351-bc6c5a3a1a0f"> <!-- 🔴 REEMPLAZAR -->
+        <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f"> <!-- 🔴 REEMPLAZAR -->
+        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32"> <!-- 🔴 REEMPLAZAR -->
       </div>
     </div>
   </div>
@@ -242,16 +241,14 @@ footer{
 </div>
 </section>
 
-<!-- ===================== DEMOREEL ===================== -->
 <section>
 <h2>Demo Reel</h2>
 <div class="reel-container">
-  <!-- 🔴 SOLO CAMBIA ESTE LINK POR EL TUYO -->
+  <!-- 🔴 SOLO CAMBIA ESTE LINK POR TU VIDEO -->
   <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
 </div>
 </section>
 
-<!-- ===================== FOOTER ===================== -->
 <footer>
 <p>© 2026 Jimena Villalobos Orduña</p>
 </footer>
