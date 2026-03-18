@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jimena Villalobos Orduña | Animation Portfolio</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    /* RESET */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
       background: #050505;
       color: #f1f1f1;
-      overflow-x: hidden;
     }
 
-    h1, h2, h3 {
+    h1, h2 {
       font-family: 'Playfair Display', serif;
-      letter-spacing: 1px;
     }
 
-    /* HEADER CON FONDO */
+    /* 🔥 HEADER CON IMAGEN QUE SÍ FUNCIONA */
     header {
       height: 100vh;
       display: flex;
@@ -32,14 +33,30 @@
       align-items: center;
       text-align: center;
 
-      background: 
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
-        url("Public/Images/Background/Background_1.jpeg");
+      /* imagen externa (segura) */
+      background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+      
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+    }
 
-      animation: fadeIn 1.5s ease;
+    /* capa oscura encima SIN romper la imagen */
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.55);
+      z-index: 0;
+    }
+
+    header h1,
+    header p {
+      position: relative;
+      z-index: 1;
     }
 
     header h1 {
@@ -48,132 +65,19 @@
     }
 
     header p {
-      opacity: 0.8;
       font-size: 1.2rem;
+      opacity: 0.9;
     }
 
-    /* SECCIONES */
     section {
       padding: 100px 10%;
-      animation: fadeUp 1s ease both;
-    }
-
-    .about {
-      max-width: 700px;
-      margin: auto;
-      text-align: center;
-      line-height: 1.7;
-    }
-
-    /* HABILIDADES */
-    .skills ul {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .skills li {
-      background: rgba(255,255,255,0.05);
-      padding: 20px;
-      border-radius: 15px;
-      backdrop-filter: blur(10px);
-      transition: 0.4s;
-    }
-
-    .skills li:hover {
-      transform: translateY(-8px) scale(1.02);
-      background: rgba(255,255,255,0.08);
-    }
-
-    /* PROYECTOS */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
-      margin-top: 40px;
-    }
-
-    .card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 20px;
-      cursor: pointer;
-    }
-
-    .card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: 0.6s ease;
-    }
-
-    .card:hover img {
-      transform: scale(1.15);
-      filter: brightness(0.3) blur(2px);
-    }
-
-    .card-content {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 25px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: 0.5s;
-    }
-
-    .card:hover .card-content {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-    }
-
-    /* CONTACTO */
-    .contact {
       text-align: center;
     }
 
-    .contact a {
-      display: inline-block;
-      margin: 10px;
-      color: #aaa;
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: 0.3s;
-    }
-
-    .contact a:hover {
-      color: white;
-      border-bottom: 1px solid white;
-    }
-
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 40px;
-      opacity: 0.4;
-    }
-
-    /* ANIMACIONES */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      opacity: 0.5;
     }
 
   </style>
@@ -186,43 +90,11 @@
   <p>Animation • Visual Storytelling • Direction</p>
 </header>
 
-<section class="about">
+<section>
   <h2>Sobre mí</h2>
   <p>
-    Artista enfocada en animación y narrativa audiovisual. Mi trabajo explora lo psicológico y lo emocional a través de la imagen en movimiento, la composición y el ritmo visual.
+    Artista enfocada en animación y narrativa audiovisual. Explorando lo emocional a través de la imagen.
   </p>
-</section>
-
-<section class="skills">
-  <h2>Habilidades</h2>
-  <ul>
-    <li>Animación (stop motion y experimental)</li>
-    <li>Narrativa cinematográfica</li>
-    <li>Diseño de personajes</li>
-    <li>Dirección de arte</li>
-    <li>Concept art</li>
-    <li>Atmósferas visuales</li>
-    <li>Storytelling psicológico</li>
-  </ul>
-</section>
-
-<section class="projects">
-  <h2>Proyectos</h2>
-  <!-- Ejemplo de tarjeta de proyecto -->
-  <div class="card">
-    <img src="images/proyectos/proyecto1.jpeg" alt="Proyecto 1">
-    <div class="card-content">
-      <h3>Proyecto 1</h3>
-      <p>Descripción breve del proyecto.</p>
-    </div>
-  </div>
-  <!-- Agrega más tarjetas copiando este div -->
-</section>
-
-<section class="contact">
-  <h2>Contacto</h2>
-  <a href="mailto:zephyr.jvo@gmail.com">zephyr.jvo@gmail.com</a>
-  <a href="https://instagram.com/zephyrssart" target="_blank">@zephyrssart</a>
 </section>
 
 <footer>
