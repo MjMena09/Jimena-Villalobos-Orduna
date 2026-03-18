@@ -2,12 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jimena Villalobos Orduña | Animation Portfolio</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
+    /* RESET */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -22,7 +23,7 @@
       letter-spacing: 1px;
     }
 
-    /* HEADER */
+    /* HEADER CON FONDO */
     header {
       height: 100vh;
       display: flex;
@@ -31,7 +32,9 @@
       align-items: center;
       text-align: center;
 
-      background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475");
+      background: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
+        url("Public/Images/Background/Background_1.jpeg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -42,15 +45,14 @@
     header h1 {
       font-size: 3.5rem;
       margin-bottom: 10px;
-      text-shadow: 0 0 20px rgba(0,0,0,0.9);
     }
 
     header p {
+      opacity: 0.8;
       font-size: 1.2rem;
-      opacity: 0.9;
-      text-shadow: 0 0 15px rgba(0,0,0,0.9);
     }
 
+    /* SECCIONES */
     section {
       padding: 100px 10%;
       animation: fadeUp 1s ease both;
@@ -63,6 +65,7 @@
       line-height: 1.7;
     }
 
+    /* HABILIDADES */
     .skills ul {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -83,6 +86,7 @@
       background: rgba(255,255,255,0.08);
     }
 
+    /* PROYECTOS */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -125,6 +129,11 @@
       transform: translateY(0);
     }
 
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    /* CONTACTO */
     .contact {
       text-align: center;
     }
@@ -143,12 +152,14 @@
       border-bottom: 1px solid white;
     }
 
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 40px;
       opacity: 0.4;
     }
 
+    /* ANIMACIONES */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -178,7 +189,7 @@
 <section class="about">
   <h2>Sobre mí</h2>
   <p>
-    Artista enfocada en animación y narrativa audiovisual. Mi trabajo explora lo psicológico y lo emocional a través de la imagen en movimiento.
+    Artista enfocada en animación y narrativa audiovisual. Mi trabajo explora lo psicológico y lo emocional a través de la imagen en movimiento, la composición y el ritmo visual.
   </p>
 </section>
 
@@ -193,6 +204,19 @@
     <li>Atmósferas visuales</li>
     <li>Storytelling psicológico</li>
   </ul>
+</section>
+
+<section class="projects">
+  <h2>Proyectos</h2>
+  <!-- Ejemplo de tarjeta de proyecto -->
+  <div class="card">
+    <img src="images/proyectos/proyecto1.jpeg" alt="Proyecto 1">
+    <div class="card-content">
+      <h3>Proyecto 1</h3>
+      <p>Descripción breve del proyecto.</p>
+    </div>
+  </div>
+  <!-- Agrega más tarjetas copiando este div -->
 </section>
 
 <section class="contact">
